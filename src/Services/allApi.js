@@ -1,18 +1,19 @@
 import { Axios } from "axios";
 import AxiosConfig from "./AxiosConfig";
+import { baseUrl } from "./baseUrl";
 
 export const addEvent = async(reqbody) => {
-    return await AxiosConfig('post','http://localhost:3000/events',reqbody)
+    return await AxiosConfig('post',`${baseUrl}/events`,reqbody)
 }
 
 export const getEvent = async() => {
-    return await AxiosConfig('get','http://localhost:3000/events','')
+    return await AxiosConfig('get',`${baseUrl}/events`,'')
 }
 
 export const deleteEvent = async(id) => {
-    return await AxiosConfig('delete',`http://localhost:3000/events/${id}`,{})
+    return await AxiosConfig('delete',`${baseUrl}/events/${id}`,{})
 }
 
 export const editEvent = async(id,reqBody) => {
-    return await AxiosConfig('put',`http://localhost:3000/events/${id}`,reqBody)
+    return await AxiosConfig('put',`${baseUrl}/events/${id}`,reqBody)
 }
